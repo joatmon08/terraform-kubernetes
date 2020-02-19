@@ -12,7 +12,7 @@ resource "azurerm_kubernetes_cluster" "engineering" {
   default_node_pool {
     name       = "default"
     node_count = 1
-    vm_size    = "Standard_D2_v2"
+    vm_size    = var.enable_larger_instances ? "Standard_D3_v2" : "Standard_D2_v2"
   }
 
   service_principal {
