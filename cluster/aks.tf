@@ -4,10 +4,10 @@ resource "azurerm_resource_group" "engineering" {
 }
 
 resource "azurerm_kubernetes_cluster" "engineering" {
-  name                = "${var.cluster_name}-cluster-${var.environment}"
+  name                = "${var.environment}-${var.cluster_name}-cluster"
   location            = azurerm_resource_group.engineering.location
   resource_group_name = azurerm_resource_group.engineering.name
-  dns_prefix          = "${var.cluster_name}-cluster-qa"
+  dns_prefix          = "${var.environment}-${var.cluster_name}-cluster"
 
   default_node_pool {
     name       = "default"
