@@ -1,4 +1,4 @@
 variable "enable_larger_instances" {
-  type = boolean
+  type = bool
   default = false
 }
