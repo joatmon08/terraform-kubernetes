@@ -5,4 +5,3 @@ variable "organization" {}
 variable "replicas" {
   default = 1
 }
-
