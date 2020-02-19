@@ -1,6 +1,6 @@
 resource "local_file" "kubeconfig" {
   sensitive_content = data.terraform_remote_state.cluster.outputs.kubeconfig
-  destination       = var.config_path
+  filename          = var.config_path
   lifecycle {
     create_before_destroy = true
   }
