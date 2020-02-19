@@ -1,10 +1,9 @@
-resource "local_file" "kubeconfig" {
-  content  = data.terraform_remote_state.cluster.outputs.kubeconfig
-  filename = "/home/terraform/.kube/config"
-}
-
 resource "helm_release" "consul" {
-  depends_on    = [local_file.kubeconfig]
+  provisioner "file" {
+    content     = data.terraform_remote_state.cluster.outputs.kubeconfig
+    destination = "/home/terraform/.kube/config"
+  }
+
   name      = var.environment
   chart     = "${path.module}/consul-helm"
   namespace = var.namespace
