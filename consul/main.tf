@@ -21,6 +21,6 @@ data "terraform_remote_state" "cluster" {
 provider "helm" {
   version = "~> 1.0"
   kubernetes {
-    config_path = "/home/terraform/.kube/config"
+    config_path = var.config_path
   }
 }

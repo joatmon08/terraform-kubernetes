@@ -1,16 +1,13 @@
-resource "null_resource" "kubeconfig" {
-  triggers = {
-    timestamp = timestamp()
-  }
-
-  provisioner "file" {
-    content     = data.terraform_remote_state.cluster.outputs.kubeconfig
-    destination = "/home/terraform/.kube/config"
+resource "local_file" "kubeconfig" {
+  sensitive_content = data.terraform_remote_state.cluster.outputs.kubeconfig
+  destination       = var.config_path
+  lifecycle {
+    create_before_destroy = true
   }
 }
 
 resource "helm_release" "consul" {
-  depends_on = [null_resource.kubeconfig]
+  depends_on = [local_file.kubeconfig]
   name       = var.environment
   chart      = "${path.module}/consul-helm"
   namespace  = var.namespace
