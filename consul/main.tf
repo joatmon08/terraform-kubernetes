@@ -21,12 +21,12 @@ data "terraform_remote_state" "cluster" {
 provider "helm" {
   version = "~> 1.0"
   kubernetes {
-    host     = terraform_remote_state.cluster.host
-    username = terraform_remote_state.cluster.username
-    password = terraform_remote_state.cluster.password
+    host     = terraform_remote_state.cluster.outputs.host
+    username = terraform_remote_state.cluster.outputs.username
+    password = terraform_remote_state.cluster.outputs.password
 
-    client_certificate     = terraform_remote_state.cluster.client_certificate
-    client_key             = terraform_remote_state.cluster.client_key
-    cluster_ca_certificate = terraform_remote_state.cluster.cluster_ca_certificate
+    client_certificate     = terraform_remote_state.cluster.outputs.client_certificate
+    client_key             = terraform_remote_state.cluster.outputs.client_key
+    cluster_ca_certificate = terraform_remote_state.cluster.outputs.cluster_ca_certificate
   }
 }
