@@ -18,6 +18,10 @@ data "terraform_remote_state" "cluster" {
   }
 }
 
+provider "local" {
+  version = "~> 1.4.0"
+}
+
 provider "helm" {
   version = "~> 1.0"
   kubernetes {
