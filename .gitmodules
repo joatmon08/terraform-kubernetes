@@ -1,0 +1,3 @@
+[submodule "consul/consul-helm"]
+	path = consul/consul-helm
+	url = git@github.com:hashicorp/consul-helm.git
