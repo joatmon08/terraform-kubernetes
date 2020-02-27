@@ -1,5 +1,9 @@
 variable "location" {
-  default = "East US 2"
+  type = map
+  default = {
+    azure  = "East US 2"
+    google = "us-central1"
+  }
 }
 
 variable "cluster_name" {}
@@ -9,3 +13,5 @@ variable "environment" {}
 variable "client_id" {}
 
 variable "client_secret" {}
+
+variable "google_credentials" {}

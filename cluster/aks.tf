@@ -1,9 +1,10 @@
 resource "azurerm_resource_group" "engineering" {
   name     = var.cluster_name
-  location = var.location
+  location = var.location[var.choose_provider]
 }
 
 resource "azurerm_kubernetes_cluster" "engineering" {
+  count               = var.choose_provider == "azure" ? 1 : 0
   name                = "${var.environment}-${var.cluster_name}-cluster"
   location            = azurerm_resource_group.engineering.location
   resource_group_name = azurerm_resource_group.engineering.name

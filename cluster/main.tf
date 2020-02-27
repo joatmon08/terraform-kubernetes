@@ -11,3 +11,8 @@ terraform {
 provider "azurerm" {
   version = "1.44.0"
 }
+
+provider "google" {
+  version     = "3.10.0"
+  credentials = var.google_credentials
+}
