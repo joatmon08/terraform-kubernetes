@@ -1,9 +1,6 @@
 variable "location" {
-  type = map
-  default = {
-    azure  = "East US 2"
-    google = "us-central1"
-  }
+  type    = string
+  default = "us-central1"
 }
 
 variable "cluster_name" {
