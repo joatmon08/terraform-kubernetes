@@ -7,31 +7,31 @@ variable "location" {
 }
 
 variable "cluster_name" {
-  type        = "string"
+  type        = string
   description = "Name of cluster, will be combined with environment"
 }
 
 variable "environment" {
-  type        = "string"
+  type        = string
   description = "Environment of cluster"
 }
 
 variable "azure_client_id" {
-  type        = "string"
+  type        = string
   description = "Azure client ID"
 }
 
 variable "azure_client_secret" {
-  type        = "string"
+  type        = string
   description = "Azure client secret"
 }
 
 variable "google_credentials" {
-  type        = "string"
+  type        = string
   description = "Google credentials in JSON"
 }
 
 variable "google_project" {
-  type        = "string"
+  type        = string
   description = "Google Project to deploy cluster"
 }
