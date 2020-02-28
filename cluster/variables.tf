@@ -26,6 +26,16 @@ variable "azure_client_secret" {
   description = "Azure client secret"
 }
 
+variable "username" {
+  type        = string
+  description = "Google cluster username"
+}
+
+variable "password" {
+  type        = string
+  description = "Google cluster password"
+}
+
 variable "google_credentials" {
   type        = string
   description = "Google credentials in JSON"
