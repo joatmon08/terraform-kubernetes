@@ -20,7 +20,7 @@ resource "google_container_cluster" "engineering" {
 }
 
 resource "google_container_node_pool" "engineering_preemptible_nodes" {
-  count    = var.choose_provider == "google" ? 1 : 0
+  count      = var.choose_provider == "google" ? 1 : 0
   name       = "${var.cluster_name}-node-pool"
   location   = var.location[var.choose_provider]
   cluster    = google_container_cluster.engineering.0.name

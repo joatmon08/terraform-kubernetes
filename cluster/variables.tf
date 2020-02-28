@@ -6,6 +6,8 @@ variable "location" {
   }
 }
 
+variable "project" {}
+
 variable "cluster_name" {}
 
 variable "environment" {}

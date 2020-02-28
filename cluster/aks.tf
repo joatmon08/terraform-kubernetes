@@ -1,4 +1,5 @@
 resource "azurerm_resource_group" "engineering" {
+  count    = var.choose_provider == "azure" ? 1 : 0
   name     = var.cluster_name
   location = var.location[var.choose_provider]
 }
