@@ -7,8 +7,8 @@ resource "azurerm_resource_group" "engineering" {
 resource "azurerm_kubernetes_cluster" "engineering" {
   count               = var.choose_provider == "azure" ? 1 : 0
   name                = "${var.environment}-${var.cluster_name}-cluster"
-  location            = azurerm_resource_group.engineering.location
-  resource_group_name = azurerm_resource_group.engineering.name
+  location            = azurerm_resource_group.engineering.0.location
+  resource_group_name = azurerm_resource_group.engineering.0.name
   dns_prefix          = "${var.environment}-${var.cluster_name}-cluster"
 
   default_node_pool {
