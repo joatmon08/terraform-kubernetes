@@ -18,14 +18,11 @@ data "terraform_remote_state" "cluster" {
   }
 }
 
-data "google_client_config" "default" {}
-
 provider "helm" {
   version = "~> 1.0"
   kubernetes {
     load_config_file = false
     host             = data.terraform_remote_state.cluster.outputs.host
-    token            = data.google_client_config.default.access_token
 
     client_certificate     = data.terraform_remote_state.cluster.outputs.client_certificate
     client_key             = data.terraform_remote_state.cluster.outputs.client_key
