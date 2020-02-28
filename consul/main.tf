@@ -21,11 +21,9 @@ data "terraform_remote_state" "cluster" {
 provider "helm" {
   version = "~> 1.0"
   kubernetes {
-    load_config_file = false
-    host             = data.terraform_remote_state.cluster.outputs.host
-
-    client_certificate     = data.terraform_remote_state.cluster.outputs.client_certificate
-    client_key             = data.terraform_remote_state.cluster.outputs.client_key
+    load_config_file       = false
+    host                   = data.terraform_remote_state.cluster.outputs.host
+    token                  = data.terraform_remote_state.cluster.outputs.token
     cluster_ca_certificate = data.terraform_remote_state.cluster.outputs.cluster_ca_certificate
   }
 }
