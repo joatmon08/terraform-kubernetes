@@ -20,6 +20,6 @@ variable "organization" {
 
 variable "replicas" {
   type        = number
-  default     = 1
+  default     = 3
   description = "Number of consul replicas"
 }
