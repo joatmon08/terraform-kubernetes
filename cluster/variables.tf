@@ -6,14 +6,32 @@ variable "location" {
   }
 }
 
-variable "project" {}
+variable "cluster_name" {
+  type        = "string"
+  description = "Name of cluster, will be combined with environment"
+}
 
-variable "cluster_name" {}
+variable "environment" {
+  type        = "string"
+  description = "Environment of cluster"
+}
 
-variable "environment" {}
+variable "azure_client_id" {
+  type        = "string"
+  description = "Azure client ID"
+}
 
-variable "client_id" {}
+variable "azure_client_secret" {
+  type        = "string"
+  description = "Azure client secret"
+}
 
-variable "client_secret" {}
+variable "google_credentials" {
+  type        = "string"
+  description = "Google credentials in JSON"
+}
 
-variable "google_credentials" {}
+variable "google_project" {
+  type        = "string"
+  description = "Google Project to deploy cluster"
+}

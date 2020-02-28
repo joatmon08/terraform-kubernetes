@@ -15,5 +15,5 @@ provider "azurerm" {
 provider "google" {
   version     = "3.10.0"
   credentials = var.google_credentials
-  project     = var.project
+  project     = var.google_project
 }
