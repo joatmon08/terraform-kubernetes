@@ -10,11 +10,11 @@ resource "google_container_cluster" "engineering" {
   initial_node_count       = 1
 
   master_auth {
-    username = var.username
-    password = var.password
+    username = ""
+    password = ""
 
     client_certificate_config {
-      issue_client_certificate = false
+      issue_client_certificate = true
     }
   }
 }
