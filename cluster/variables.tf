@@ -13,16 +13,6 @@ variable "environment" {
   description = "Environment of cluster"
 }
 
-variable "azure_client_id" {
-  type        = string
-  description = "Azure client ID"
-}
-
-variable "azure_client_secret" {
-  type        = string
-  description = "Azure client secret"
-}
-
 variable "google_credentials" {
   type        = string
   description = "Google credentials in JSON"

@@ -17,3 +17,5 @@ provider "google" {
   credentials = var.google_credentials
   project     = var.google_project
 }
+
+data "google_client_config" "default" {}
