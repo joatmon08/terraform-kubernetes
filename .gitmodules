@@ -1,6 +1,0 @@
-[submodule "consul/consul-helm"]
-	path = consul/consul-helm
-	url = https://github.com/hashicorp/consul-helm.git
-[submodule "vault/vault-helm"]
-	path = vault/vault-helm
-	url = https://github.com/hashicorp/vault-helm.git
