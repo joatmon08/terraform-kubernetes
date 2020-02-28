@@ -5,5 +5,5 @@ variable "enable_larger_instances" {
 
 variable "choose_provider" {
   type    = string
-  default = "azure"
+  default = "google"
 }
