@@ -8,6 +8,15 @@ resource "google_container_cluster" "engineering" {
   # node pool and immediately delete it.
   remove_default_node_pool = true
   initial_node_count       = 1
+
+  master_auth {
+    username = ""
+    password = ""
+
+    client_certificate_config {
+      issue_client_certificate = true
+    }
+  }
 }
 
 resource "google_container_node_pool" "engineering_preemptible_nodes" {
