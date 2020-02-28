@@ -6,3 +6,8 @@ using Helm charts.
 
 It uses Terraform Cloud pipelines to separate cluster
 configuration and application deployment.
+
+* Cluster Deployment - under `/cluster`
+* Consul Deployment - deploys Consul to Kubernetes cluster. Under `/consul`.
+* Vault Deployment - deploys Vault to connect with Consul backend. Under
+  `/vault`.
