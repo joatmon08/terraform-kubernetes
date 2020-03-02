@@ -22,3 +22,14 @@ variable "google_project" {
   type        = string
   description = "Google Project to deploy cluster"
 }
+
+variable "username" {
+  type = string
+  default = "admin"
+  description = "Username for cluster"
+}
+
+variable "password" {
+  type = string
+  description = "Password for cluster"
+}
