@@ -30,4 +30,11 @@ order to separate cluster configuration from Consul deployment.
 You'll need to specify variables in `variables.tf` within
 the Terraform Cloud workspace for the Consul deployment.
 
-# Step 3: 
+# Step 3: Deploy Vault
+
+In Terraform Cloud, you'll need to specify a __Run Trigger__
+that uses the Consul deployment's workspace. This is because 
+this Vault configuration needs to use a Consul backend.
+
+You'll need to specify variables in `variables.tf` within
+the Terraform Cloud workspace for the Vault deployment.
