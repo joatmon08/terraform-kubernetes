@@ -1,11 +1,6 @@
-variable "environment" {
+variable "consul_workspace" {
   type        = string
-  description = "Environment to describe Vault Helm release"
-}
-
-variable "namespace" {
-  type        = string
-  description = "Namespace to which to deploy the Vault Helm chart"
+  description = "Workspace that created the Consul cluster"
 }
 
 variable "cluster_workspace" {

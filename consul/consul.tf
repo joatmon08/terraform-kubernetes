@@ -1,7 +1,8 @@
 resource "helm_release" "consul" {
-  name      = var.environment
-  chart     = "${path.module}/consul-helm"
-  namespace = var.namespace
+  depends_on = [kubernetes_namespace.secrets]
+  name       = "${var.environment}-consul"
+  chart      = "${path.module}/consul-helm"
+  namespace  = var.namespace
 
   set {
     name  = "global.name"

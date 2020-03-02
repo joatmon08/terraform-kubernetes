@@ -18,6 +18,16 @@ data "terraform_remote_state" "cluster" {
   }
 }
 
+data "terraform_remote_state" "consul" {
+  backend = "remote"
+  config = {
+    organization = var.organization
+    workspaces = {
+      name = var.consul_workspace
+    }
+  }
+}
+
 provider "helm" {
   version = "~> 1.0"
   kubernetes {
