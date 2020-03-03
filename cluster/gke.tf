@@ -16,6 +16,8 @@ resource "google_container_cluster" "engineering" {
       issue_client_certificate = false
     }
   }
+
+  ip_allocation_policy {}
 }
 
 resource "google_container_node_pool" "engineering_preemptible_nodes" {
