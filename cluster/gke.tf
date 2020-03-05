@@ -1,6 +1,8 @@
+data "google_client_config" "default" {}
+
 resource "google_container_cluster" "engineering" {
-  name     = var.cluster_name
-  location = var.location
+  count = var.cluster_provider == "gke" ? 1 : 0
+  name  = var.cluster_name
 
   # We can't create a cluster with no node pool defined, but we want to only use
   # separately managed node pools. So we create the smallest possible default
@@ -22,8 +24,7 @@ resource "google_container_cluster" "engineering" {
 
 resource "google_container_node_pool" "engineering_preemptible_nodes" {
   name       = "${var.cluster_name}-node-pool"
-  location   = var.location
-  cluster    = google_container_cluster.engineering.name
+  cluster    = google_container_cluster.engineering.0.name
   node_count = 1
 
   node_config {

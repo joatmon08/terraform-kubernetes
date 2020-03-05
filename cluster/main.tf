@@ -13,9 +13,11 @@ provider "azurerm" {
 }
 
 provider "google" {
-  version     = "3.10.0"
-  credentials = var.google_credentials
-  project     = var.google_project
+  version = "3.10.0"
+  project = var.google_project
+  region  = var.location.gcp
 }
 
-data "google_client_config" "default" {}
+provider "digitalocean" {
+  version = "~> 1.14"
+}
