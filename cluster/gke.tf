@@ -26,6 +26,7 @@ resource "google_container_cluster" "engineering" {
 }
 
 resource "google_container_node_pool" "engineering_preemptible_nodes" {
+  count      = var.cluster_provider == "gke" ? 1 : 0
   name       = "${var.cluster_name}-node-pool"
   cluster    = google_container_cluster.engineering.0.name
   location   = data.google_compute_zones.available.names.0
