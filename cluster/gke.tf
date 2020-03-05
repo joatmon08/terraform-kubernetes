@@ -26,7 +26,7 @@ resource "google_container_cluster" "engineering" {
 
 resource "google_container_node_pool" "engineering_preemptible_nodes" {
   name       = "${var.cluster_name}-node-pool"
-  cluster    = google_container_cluster.engineering.0.name
+  cluster    = google_container_cluster.engineering.name
   location   = data.google_compute_zones.available.names.0
   node_count = 1
 
