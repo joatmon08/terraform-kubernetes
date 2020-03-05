@@ -3,7 +3,7 @@ variable "location" {
   description = "Map containing provider and the region to deploy clusters."
   default = {
     gcp = "us-central1"
-    do  = "sfo1"
+    do  = "nyc1"
   }
 }
 
