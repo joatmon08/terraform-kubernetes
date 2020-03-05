@@ -1,7 +1,8 @@
 variable "location" {
-  type = map
+  type        = map
+  description = "Map containing provider and the region to deploy clusters."
   default = {
-    gcp = "us-central1-f"
+    gcp = "us-central1"
     do  = "sfo1"
   }
 }
@@ -14,12 +15,7 @@ variable "cluster_provider" {
 
 variable "cluster_name" {
   type        = string
-  description = "Name of cluster, will be combined with environment"
-}
-
-variable "environment" {
-  type        = string
-  description = "Environment of cluster"
+  description = "Name of cluster."
 }
 
 variable "google_project" {
@@ -30,10 +26,10 @@ variable "google_project" {
 variable "username" {
   type        = string
   default     = "admin"
-  description = "Username for cluster"
+  description = "Username for GKE clusters."
 }
 
 variable "password" {
   type        = string
-  description = "Password for cluster"
+  description = "Password for GKE clusters."
 }
