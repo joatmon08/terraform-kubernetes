@@ -18,4 +18,9 @@ resource "helm_release" "consul" {
     name  = "server.bootstrapExpect"
     value = var.replicas
   }
+
+  set {
+    name  = "ui"
+    value = "true"
+  }
 }
