@@ -8,16 +8,8 @@ terraform {
   }
 }
 
-provider "azurerm" {
-  version = "1.44.0"
-}
-
 provider "google" {
   version = "3.10.0"
   project = var.google_project
   region  = var.location.gcp
-}
-
-provider "digitalocean" {
-  version = "~> 1.14"
 }

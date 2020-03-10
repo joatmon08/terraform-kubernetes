@@ -1,5 +1,3 @@
-data "google_client_config" "default" {}
-
 data "google_compute_zones" "available" {}
 
 resource "google_container_cluster" "engineering" {
@@ -42,5 +40,11 @@ resource "google_container_node_pool" "engineering_preemptible_nodes" {
       "https://www.googleapis.com/auth/logging.write",
       "https://www.googleapis.com/auth/monitoring",
     ]
+
+    labels = {
+      contains_secrets = var.enable_consul_and_vault
+    }
+
+    tags = var.enable_consul_and_vault ? ["contains_secrets"] : []
   }
 }

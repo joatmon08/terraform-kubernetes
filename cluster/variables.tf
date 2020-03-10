@@ -3,7 +3,6 @@ variable "location" {
   description = "Map containing provider and the region to deploy clusters."
   default = {
     gcp = "us-central1"
-    do  = "nyc1"
   }
 }
 
@@ -26,10 +25,16 @@ variable "google_project" {
 variable "username" {
   type        = string
   default     = "admin"
-  description = "Username for GKE clusters."
+  description = "Username for GKE clusters"
 }
 
 variable "password" {
   type        = string
-  description = "Password for GKE clusters."
+  description = "Password for GKE clusters"
+}
+
+variable "enable_consul_and_vault" {
+  type        = bool
+  default     = false
+  description = "Enable consul and vault for the secrets cluster"
 }
