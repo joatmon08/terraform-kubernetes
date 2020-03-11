@@ -1,4 +1,4 @@
-variable "environment" {
+variable "release_name" {
   type        = string
   description = "Helm Release name for Consul chart"
 }
