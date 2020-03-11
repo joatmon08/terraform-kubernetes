@@ -22,6 +22,6 @@ resource "helm_release" "consul" {
 
   set {
     name  = "ui"
-    value = "true"
+    value = true
   }
 }
