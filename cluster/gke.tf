@@ -42,9 +42,9 @@ resource "google_container_node_pool" "engineering_preemptible_nodes" {
     ]
 
     labels = {
-      contains_secrets = var.enable_consul_and_vault
+      secrets = var.enable_consul_and_vault
     }
 
-    tags = var.enable_consul_and_vault ? ["contains_secrets"] : []
+    tags = var.enable_consul_and_vault ? ["secrets"] : []
   }
 }

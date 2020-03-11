@@ -23,7 +23,6 @@ __sensitive environment variables__:
 1. `GOOGLE_CREDENTIALS`: JSON of GCP credentials. Must have access to GKE admin.
    You must flatten the JSON (remove newlines) before pasting it into Terraform
    Cloud. Run `cat <key file>.json | jq -c`.
-1. `DIGITALOCEAN_TOKEN`: API Token for Digital Ocean. Generate it [here](https://cloud.digitalocean.com/account/api/tokens).
 
 The pipeline will output the Kubernetes credentials for consumption by the
 Helm charts.
@@ -58,3 +57,9 @@ a submodule.
 
 Specify variables in `variables.tf` within
 the Terraform Cloud workspace for the Vault deployment.
+
+# Step 4: Update Cluster
+
+Let's say we only want to deploy Consul and Vault to a cluster
+if it is labeled `secrets` in its tags.
+
