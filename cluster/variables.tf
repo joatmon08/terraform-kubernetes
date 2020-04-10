@@ -32,9 +32,3 @@ variable "password" {
   type        = string
   description = "Password for GKE clusters"
 }
-
-variable "enable_consul_and_vault" {
-  type        = bool
-  default     = true
-  description = "Enable consul and vault for the secrets cluster"
-}
