@@ -27,8 +27,6 @@ resource "helm_release" "vault" {
       service_registration "consul" {
         address = "HOST_IP:8500"
       }
-      
-      service_registration "kubernetes" {}
     EOT
   }
 }
