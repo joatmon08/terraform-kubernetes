@@ -1,12 +1,4 @@
-terraform {
-  backend "remote" {
-    organization = "hashicorp-team-da-beta"
-
-    workspaces {
-      name = "qa-kubernetes-consul"
-    }
-  }
-}
+terraform {}
 
 data "terraform_remote_state" "cluster" {
   backend = "remote"

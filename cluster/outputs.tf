@@ -23,5 +23,5 @@ output "password" {
 }
 
 output "enable_consul_and_vault" {
-  value     = var.enable_consul_and_vault
+  value = var.enable_consul_and_vault
 }
